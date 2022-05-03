@@ -6,37 +6,22 @@ const itemsObject = [
 
 // Given the array, implement a function for generating a new array which doubles the quantity and price in each object.
 
-function Q1 (arr,num) {
-    var result = []
-    for (var i in arr){
-      var temp = {}
-      for (var j in arr[i]){
-        temp[j] = arr[i][j]*num
-      }
-      result.push(temp)
-    }
-    return result
-  }
-  
-  console.log(Q1(itemsObject,2))
+
+const Q1 = itemsObject.map ((x) => {
+  x.quantity *= 2;
+  x.price *= 2;
+  return x
+})
+
+console.log(Q1)
 
 // Given the array, implement a function for generating a new array which contains item quantity > 2 and price > 300 only.
 
-function Q2 (arr,quantity,price) {
-    var result = []
-    for (var i in arr){
-      var temp = {}
-      for (var j in arr[i]){
-        temp[j] = arr[i][j]
-      }
-      if (temp.quantity > quantity && temp.price > price){
-        result.push(temp)
-      }
-    }
-    return result
-  }
-  
-  console.log(Q2(itemsObject,2,300))
+const Q2 = itemsObject.filter((x) => {
+  return x.quantity > 2 && x.price > 300
+  });
+   
+console.log(Q2)
 
 //   Given the array, implement a function to calculate the total value of the items.
 function Q3 (arr){
@@ -59,7 +44,6 @@ function Q4 (str) {
 }
 
 console.log(Q4(string))
-
 
 
 
