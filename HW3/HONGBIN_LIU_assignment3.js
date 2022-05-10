@@ -1,7 +1,7 @@
 window.onload = () => {
   loadTableData(tableInfo);
   loadLists(list);
-  dropDown(dropDownList);
+  loadDropDown(dropDownList);
 };
 
 const tableInfo = {
@@ -30,9 +30,9 @@ const tableInfo = {
 
 function loadTableData(tableInfo) {
   const Question_1 = document.createElement("div");
-  const tbody = document.createElement("tbody");
+  Question_1.innerText = "Question 1";
   const table = document.createElement("table");
-  //   const tbody = document.getElementById("tableData");
+  const tbody = document.createElement("tbody");
   let tr = document.createElement("tr");
   let row = "";
 
@@ -62,6 +62,7 @@ function loadTableData(tableInfo) {
   table.append(tbody);
   Question_1.append(table);
   document.body.appendChild(Question_1);
+  Question_1.className += "Question_1";
 }
 
 // _____________________________________________________________________________________
@@ -70,8 +71,11 @@ const list = ["HTML", "JavaScript", "CSS", "React", "Redux", "Java"];
 
 function loadLists(list) {
   const Question_2 = document.createElement("div");
+  Question_2.innerText = "Question 2";
   const ol = document.createElement("ol");
   const ul = document.createElement("ul");
+  ol.innerText = "An ordered technologies list";
+  ul.innerText = "An unordered technologies list";
 
   list.forEach((e) => {
     let li = document.createElement("li");
@@ -89,6 +93,7 @@ function loadLists(list) {
   Question_2.appendChild(ul);
 
   document.body.appendChild(Question_2);
+  Question_2.className += "Question_2";
 }
 
 // _____________________________________________________________________________________
@@ -101,21 +106,20 @@ const dropDownList = [
   { value: "sanJose", content: "San Jose" },
 ];
 
-function dropDown(dropDownList) {
+function loadDropDown(dropDownList) {
   const Question_3 = document.createElement("div");
+  Question_3.innerText = "Question 3";
   const select = document.createElement("select");
   let option = document.createElement("option");
 
-  var dropDowns = dropDownList.map(({ content }) => {
-    return content;
-  });
-
-  dropDowns.forEach((e) => {
+  var dropDowns = dropDownList.map(({ value, content }) => {
     let option = document.createElement("option");
-    option.innerText += e;
+    option.innerText += content;
+    option.value = value;
     select.appendChild(option);
   });
 
   Question_3.appendChild(select);
   document.body.appendChild(Question_3);
+  Question_3.className += "Question_3";
 }
