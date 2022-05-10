@@ -1,0 +1,20 @@
+* {
+  margin: 10px;
+  padding: 10px;
+}
+
+.Question_1 > table,
+th,
+td {
+  text-align: center;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.Question_3 select {
+  display: block;
+  margin-top: 10px;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+}
